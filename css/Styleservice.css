@@ -1,0 +1,95 @@
+.services
+{
+    margin: 40px 0;
+}
+
+.service
+{
+    display: flex;
+    margin: 30px 0;
+}
+
+.service-icon
+{
+    flex: 30%;
+    align-self: flex-start;
+    font-size: 48px;
+    color: #252525;
+}
+
+.service-content
+{
+
+    padding-left: 20px;
+    box-shadow: 1px 5px 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 0px #000;
+  -moz-box-shadow: 0px 0px 0px #000;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+}
+
+.service-content h2
+{
+    opacity: 0.7;
+    font-size: 25px;
+    text-decoration: initial;
+    padding-left: 25px;
+}
+.service-content p
+{
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.service-content button
+{
+    margin-left: 0;
+    margin-right: 0;
+    background: var;
+    color: #000;
+
+}
+@media(min-width: 992px)
+{
+    .services-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 30px;
+    }
+
+ 
+    .title h2
+    {
+        font-size: 10px;
+    }
+}
+
+@media(max-width: 500px)
+{
+    .title h2
+    {
+        font-size: 24px;
+    }
+}
+
+
+
+.services-container
+{
+    background: linear-gradient(rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.1));
+    color: #fff;
+    padding: 40px 60px;
+    border-radius: 10px;
+    background-image: url('Go.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    border-radius: 4px;
+    margin-top: 70px;
+    box-shadow: 1px 5px 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 0px #000;
+  -moz-box-shadow: 0px 0px 0px #000;
+}
+
