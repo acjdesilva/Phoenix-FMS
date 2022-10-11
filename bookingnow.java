@@ -12,10 +12,3 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet(urlPatterns = {"/bookingnow"})
-public class bookingnow extends HttpServlet {
-    
-    Connection con;
-    PreparedStatement pst;
-    PreparedStatement pst1;
-    ResultSet rs;
