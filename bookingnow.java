@@ -19,3 +19,6 @@ public class bookingnow extends HttpServlet {
     PreparedStatement pst;
     PreparedStatement pst1;
     ResultSet rs;
+ @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
