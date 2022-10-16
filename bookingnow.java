@@ -23,13 +23,15 @@ public class bookingnow extends HttpServlet {
  @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
- try {
+        
+        try {
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
             
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/phoenixair","root","");
-     String fullname = request.getParameter("fullname");
+            
+            String fullname = request.getParameter("fullname");
             String email = request.getParameter("email");
             String address = request.getParameter("address");
             String dob = request.getParameter("dob");
@@ -66,5 +68,7 @@ public class bookingnow extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(bookingnow.class.getName()).log(Level.SEVERE, null, ex);
         }
+      }
     }
 }
+
