@@ -29,3 +29,42 @@ public class bookingnow extends HttpServlet {
             
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/phoenixair","root","");
+     String fullname = request.getParameter("fullname");
+            String email = request.getParameter("email");
+            String address = request.getParameter("address");
+            String dob = request.getParameter("dob");
+            String flyingfrom = request.getParameter("flyingfrom");
+            String flyingto = request.getParameter("flyingto");
+            String departing = request.getParameter("departing");
+            String returning = request.getParameter("returning");
+            
+            pst = con.prepareStatement("insert into booking(fullname,email,address,dob,flyingfrom,flyingto,departing,returning)values(?,?,?,?,?,?,?,?)");
+            pst.setString(1, fullname);
+            pst.setString(2, email);
+            pst.setString(3, address);
+            pst.setString(4, dob);
+            pst.setString(5, flyingfrom);
+            pst.setString(6, flyingto);
+            pst.setString(7, departing);
+            pst.setString(8, returning);
+            pst.executeUpdate();
+            
+            pst1 = con.prepareStatement("select max(id) from booking");
+            rs = pst1.executeQuery();
+            
+            rs.next();
+            
+            int regno;
+            
+            regno = rs.getInt(1);
+            
+            out.println("Thank you for your Booking");
+            out.println(regno+ "please check our dashboard ");
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(bookingnow.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(bookingnow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+}
