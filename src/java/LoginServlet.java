@@ -45,5 +45,11 @@ public class LoginServlet extends HttpServlet {
             } 
             else{
                 out.println("Incorrect email or password");
+            
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+}
             }
             
