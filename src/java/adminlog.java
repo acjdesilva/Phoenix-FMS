@@ -28,3 +28,24 @@ public class adminlog extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password"); 
         
+ //database
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/phoenixair","root","");
+            
+            Statement stm = con.createStatement();
+            ResultSet rs = stm.executeQuery("select * from adminlog where email='"+email+"' and password='"+password+"' ");
+            if(rs.next()){
+                //if email and password true than go to home.jsp file
+                response.sendRedirect("Admindash.html");
+            } 
+            else{
+                out.println("Incorrect email or password");
+            }
+            
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+        
+}
