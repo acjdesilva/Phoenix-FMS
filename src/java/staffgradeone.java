@@ -14,3 +14,21 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+/**
+ *
+ * @author Dewmin
+ */
+public class staffgradeone extends HttpServlet {
+
+  
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        //work on dopost method
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        //accept username and password from index.jsp file
+        String email = request.getParameter("email");
+        String password = request.getParameter("password"); 
+        
